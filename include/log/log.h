@@ -541,10 +541,10 @@ typedef enum {
 #define android_logToFd(tag, fd) (0)
 
 #define android_errorWriteLog(tag, subTag) \
-    __android_log_error_write(tag, subTag, -1, NULL, 0)
+    __android_log_write(ANDROID_LOG_ERROR, tag, subTag)
 
 #define android_errorWriteWithInfoLog(tag, subTag, uid, data, dataLen) \
-    __android_log_error_write(tag, subTag, uid, data, dataLen)
+    __android_log_write(ANDROID_LOG_ERROR, tag, data)
 
 typedef enum {
     LOG_ID_MAIN = 0,
